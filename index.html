@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Istikmal CMYK</title>
+  <title>Form Istikmal Syariah</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {font-family: Arial; text-align: center; background: linear-gradient(#00b09b, #96c93d); margin: 0; padding: 50px; color: white;}
-    h1 {font-size: 40px; margin: 20px;}
-    .btn {display: block; margin: 30px auto; padding: 20px; font-size: 24px; width: 80%; background: white; color: #00b09b; border-radius: 15px; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3); font-weight: bold;}
-    .btn:hover {background: #eee;}
-    footer {margin-top: 50px; font-size: 14px;}
+    body {font-family: Arial; background: linear-gradient(#00b09b, #96c93d); padding: 20px; color: #333;}
+    .form {max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);}
+    input {width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;}
+    button {background: #00b09b; color: white; padding: 15px; border: none; border-radius: 10px; font-size: 18px; width: 100%;}
+    h1 {text-align: center; color: white;}
   </style>
+  <script src="leader.js"></script>
 </head>
 <body>
-  <h1>🌙 Istikmal CMYK</h1>
-  <p style="font-size:20px;">Pilih Menu Beb! 😘</p>
-  
-  <a href="https://pakdsugie3i-cmyk.github.io/istikmal-syariah/" class="btn">📝 Formulir Syariah</a>
-  
-  <a href="leader.html" class="btn">🏆 Leaderboard Game</a>
-  
-  <footer>Powered by GitHub Pages ❤️</footer>
+  <h1>🌙 Formulir Istikmal Syariah</h1>
+  <div class="form">
+    <h2>Step 1: Data Diri</h2>
+    <input type="text" id="nama" placeholder="Nama Lengkap" required>
+    <input type="text" id="ktp" placeholder="No. KTP" required>
+    <input type="text" id="tl" placeholder="Tempat, Tanggal Lahir" required>
+    <input type="text" id="ibu" placeholder="Nama Ibu Kandung" required>
+    <button onclick="nextStep()">Lanjut Step 2</button>
+  </div>
+
+  <script>
+    function nextStep() {
+      localStorage.setItem('nama', document.getElementById('nama').value);
+      localStorage.setItem('ktp', document.getElementById('ktp').value);
+      localStorage.setItem('tl', document.getElementById('tl').value);
+      localStorage.setItem('ibu', document.getElementById('ibu').value);
+      window.location.href = "sukses.html";
+    }
+  </script>
 </body>
 </html>
