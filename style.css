@@ -1,54 +1,26 @@
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f3fff8;
-  color: #004d36;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.container {
-  background: #ffffff;
-  padding: 20px 25px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 80, 50, 0.15);
-  max-width: 400px;
-  width: 90%;
-}
-
-h1 {
-  text-align: center;
-  color: #006e4d;
-}
-
-label {
-  display: block;
-  margin-top: 12px;
-  font-weight: 600;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-}
-
-button {
-  margin-top: 20px;
-  width: 100%;
-  padding: 12px;
-  background-color: #009f6b;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #007f55;
-}
+/* STYLE FORM ISTIKMAL SYARIAH - PRO & GLOW HIJAU */
+* {box-sizing: border-box; margin: 0; padding: 0;}
+body {font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(#00b09b, #96c93d); color: #333; line-height: 1.6;}
+.container {max-width: 500px; margin: 20px auto; background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3);}
+.top {text-align: center; padding: 30px 20px; background: #00b09b; color: white; position: relative;}
+.logo {width: 120px; height: 120px; border-radius: 50%; border: 6px solid white; box-shadow: 0 0 20px rgba(255,255,255,0.8); margin-bottom: 15px;}
+.top h1 {font-size: 28px; margin: 10px 0; text-shadow: 0 2px 10px rgba(0,0,0,0.3);}
+.sub {font-size: 16px; opacity: 0.9;}
+.card {padding: 25px;}
+.card h2 {font-size: 22px; margin-bottom: 20px; color: #00b09b; text-align: center; border-bottom: 2px solid #eee; padding-bottom: 10px;}
+label {display: block; margin: 15px 0 5px; font-weight: bold; color: #00b09b; font-size: 16px;}
+input, textarea, select {width: 100%; padding: 14px; border: 2px solid #ccc; border-radius: 12px; font-size: 16px; transition: 0.3s;}
+input:focus, textarea:focus, select:focus {border-color: #00b09b; outline: none; box-shadow: 0 0 10px rgba(0,176,155,0.3);}
+textarea {resize: vertical;}
+.actions {text-align: center; margin: 30px 0;}
+.btn {padding: 16px 40px; font-size: 20px; font-weight: bold; border: none; border-radius: 50px; cursor: pointer; margin: 10px; transition: 0.3s;}
+.primary {background: #00b09b; color: white; box-shadow: 0 5px 15px rgba(0,176,155,0.4);}
+.primary:hover {background: #008b7a; transform: translateY(-2px);}
+.light {background: #f0f8ff; color: #00b09b;}
+.light:hover {background: #e0f0ff;}
+.two {display: flex; justify-content: space-between; flex-wrap: wrap;}
+.confirm-box {background: linear-gradient(#f0f8ff, #e0f0ff); padding: 20px; border-radius: 15px; margin: 25px 0; font-size: 15px; text-align: center; border: 1px dashed #00b09b;}
+.foot {text-align: center; padding: 20px; background: #eee; font-size: 14px; color: #666; border-top: 1px solid #ddd;}
+h3 {margin: 25px 0 15px; color: #00b09b; font-size: 18px; text-align: center;}
+/* GLOW EFEK LOGO */
+.logo {filter: drop-shadow(0 0 15px #00b09b);}
