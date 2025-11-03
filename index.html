@@ -1,36 +1,107 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="id">
 <head>
-  <title>Form Istikmal Syariah</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {font-family: Arial; background: linear-gradient(#00b09b, #96c93d); padding: 20px; color: #333;}
-    .form {max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);}
-    input {width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;}
-    button {background: #00b09b; color: white; padding: 15px; border: none; border-radius: 10px; font-size: 18px; width: 100%;}
-    h1 {text-align: center; color: white;}
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Formulir Istikmal Syariah - 3IReborn</title>
+  <link rel="stylesheet" href="style.css" />
   <script src="leader.js"></script>
 </head>
 <body>
-  <h1>🌙 Formulir Istikmal Syariah</h1>
-  <div class="form">
-    <h2>Step 1: Data Diri</h2>
-    <input type="text" id="nama" placeholder="Nama Lengkap" required>
-    <input type="text" id="ktp" placeholder="No. KTP" required>
-    <input type="text" id="tl" placeholder="Tempat, Tanggal Lahir" required>
-    <input type="text" id="ibu" placeholder="Nama Ibu Kandung" required>
-    <button onclick="nextStep()">Lanjut Step 2</button>
-  </div>
+  <main class="container">
+    <header class="top">
+      <img src="assets/logo.png" alt="Logo Istikmal" class="logo" />
+      <h1>Formulir Istikmal Syariah – 3IReborn</h1>
+      <p class="sub">Isi data singkat. Setelah lanjut, lengkapi data tambahan & kirim ke leader Anda.</p>
+    </header>
+
+    <section class="card">
+      <h2>Halaman 1 — Data Diri</h2>
+
+      <label>Nama Lengkap</label>
+      <input id="nama" type="text" placeholder="Nama sesuai KTP" required />
+
+      <label>Tempat Lahir</label>
+      <input id="tempat" type="text" placeholder="Contoh: Jakarta" />
+
+      <label>Tanggal Lahir</label>
+      <input id="ttl" type="date" />
+
+      <label>Jenis Kelamin</label>
+      <select id="jk">
+        <option value="">-- Pilih --</option>
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+      </select>
+
+      <label>Alamat (sesuai KTP)</label>
+      <textarea id="alamat" rows="2" placeholder="Jalan, RT/RW, Kelurahan..."></textarea>
+
+      <label>Nomor KTP (NIK)</label>
+      <input id="nik" type="text" />
+
+      <label>Nomor HP</label>
+      <input id="hp" type="tel" placeholder="08xxxxx" />
+
+      <label>Email (opsional)</label>
+      <input id="email" type="email" />
+
+      <label>Pekerjaan / Jabatan</label>
+      <input id="pekerjaan" type="text" />
+
+      <label>Penghasilan per Tahun</label>
+      <select id="penghasilan">
+        <option value="">-- Pilih --</option>
+        <option value="<50"> < 50 juta</option>
+        <option value="50-100">50 - 100 juta</option>
+        <option value="100-500">100 - 500 juta</option>
+        <option value=">500"> > 500 juta</option>
+      </select>
+
+      <label>Tinggi Badan (cm)</label>
+      <input id="tinggi" type="number" />
+
+      <label>Berat Badan (kg)</label>
+      <input id="berat" type="number" />
+
+      <label>Nama Ibu Kandung</label>
+      <input id="ibu" type="text" required />
+
+      <label>Jika CT berbeda, tulis hubungan CPP & CT</label>
+      <input id="hubungan" type="text" placeholder="Jika sama, tulis 'Sama'" />
+
+      <div class="actions">
+        <button id="toPage2" class="btn primary">Lanjut ke Halaman 2 ➜</button>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p>© 2025 Istikmal Syariah x 3IReborn</p>
+    </footer>
+  </main>
 
   <script>
-    function nextStep() {
-      localStorage.setItem('nama', document.getElementById('nama').value);
-      localStorage.setItem('ktp', document.getElementById('ktp').value);
-      localStorage.setItem('tl', document.getElementById('tl').value);
-      localStorage.setItem('ibu', document.getElementById('ibu').value);
-      window.location.href = "sukses.html";
-    }
+    document.getElementById('toPage2').onclick = function() {
+      // Simpan semua data Halaman 1
+      const data = {
+        nama: document.getElementById('nama').value,
+        tempat: document.getElementById('tempat').value,
+        ttl: document.getElementById('ttl').value,
+        jk: document.getElementById('jk').value,
+        alamat: document.getElementById('alamat').value,
+        nik: document.getElementById('nik').value,
+        hp: document.getElementById('hp').value,
+        email: document.getElementById('email').value,
+        pekerjaan: document.getElementById('pekerjaan').value,
+        penghasilan: document.getElementById('penghasilan').value,
+        tinggi: document.getElementById('tinggi').value,
+        berat: document.getElementById('berat').value,
+        ibu: document.getElementById('ibu').value,
+        hubungan: document.getElementById('hubungan').value
+      };
+      localStorage.setItem('formData1', JSON.stringify(data));
+      window.location.href = "page2.html";
+    };
   </script>
 </body>
 </html>
