@@ -1,27 +1,40 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pendaftaran Berhasil - Istikmal Syariah</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Konfirmasi Istikmal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {font-family: Arial; background: linear-gradient(#00b09b, #96c93d); padding: 20px; color: #333;}
+    .form {max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);}
+    input {width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;}
+    button {background: #00b09b; color: white; padding: 15px; border: none; border-radius: 10px; font-size: 18px; width: 100%;}
+    h1 {text-align: center; color: white;}
+  </style>
+  <script src="leader.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>✅ Pendaftaran Berhasil</h1>
-    <p>Terima kasih sudah mendaftar program <strong>Istikmal Syariah</strong> bersama 3iReborn 🌿</p>
-    <p>Silakan lanjutkan konfirmasi ke WhatsApp Kak Leader di bawah ini 👇</p>
-    <button id="hubungi">Hubungi Leader</button>
+  <h1>🌙 Konfirmasi & Kirim</h1>
+  <div class="form">
+    <h2>Step 2: Kontak</h2>
+    <input type="text" id="hp" placeholder="No. HP / WhatsApp" required>
+    <button onclick="submitForm()">Kirim Pendaftaran</button>
   </div>
 
   <script>
-    const waPesan = localStorage.getItem("waPesan");
-    const leaderWA = localStorage.getItem("leaderWA");
-    const btn = document.getElementById("hubungi");
-
-    btn.addEventListener("click", () => {
-      window.open(`https://wa.me/${leaderWA}?text=${waPesan}`, "_blank");
-    });
+    function submitForm() {
+      const nama = localStorage.getItem('nama') || 'Calon Mitra';
+      const ktp = localStorage.getItem('ktp') || '-';
+      const tl = localStorage.getItem('tl') || '-';
+      const ibu = localStorage.getItem('ibu') || '-';
+      const hp = document.getElementById('hp').value;
+      const { waNumber, leaderName } = getLeaderInfo();
+      
+      const message = `Halo *${leaderName}*! 👋%0A%0ASaya *${nama}* mau daftar Istikmal Syariah bareng 3iReborn!%0A%0A📋 *Data Saya:*%0A- KTP: ${ktp}%0A- Tempat/Tgl Lahir: ${tl}%0A- Ibu Kandung: ${ibu}%0A- HP/WA: ${hp}%0A%0ATerima kasih, tunggu konfirmasi ya! 🌿`;
+      
+      alert(`Pendaftaran Berhasil!%0ADialihkan ke WA ${leaderName}...`);
+      window.location.href = `https://wa.me/${waNumber}?text=${message}`;
+      localStorage.clear();
+    }
   </script>
 </body>
 </html>
