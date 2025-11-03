@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Halaman 2 - Istikmal Syariah</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="leader.js"></script>
+</head>
+<body>
+  <main class="container">
+    <header class="top">
+      <h1>Halaman 2 — Data Tambahan</h1>
+    </header>
+
+    <section class="card">
+      <h2>Lengkapi Data & Kirim</h2>
+
+      <label>Alamat Domisili (jika berbeda)</label>
+      <textarea id="alamat2" rows="2"></textarea>
+
+      <label>Nama Bank</label>
+      <input id="bank" type="text" />
+
+      <label>No Rekening</label>
+      <input id="norek" type="text" />
+
+      <label>Nama Ahli Waris</label>
+      <input id="waris" type="text" />
+
+      <label>Hubungan Ahli Waris</label>
+      <input id="hubwaris" type="text" />
+
+      <div class="actions">
+        <button id="kirim" class="btn primary">Kirim Pendaftaran ke Leader ✅</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Ambil data Halaman 1
+    const data1 = JSON.parse(localStorage.getItem('formData1') || '{}');
+
+    document.getElementById('kirim').onclick = function() {
+      const data2 = {
+        alamat2: document.getElementById('alamat2').value,
+        bank: document.getElementById('bank').value,
+        norek: document.getElementById('norek').value,
+        waris: document.getElementById('waris').value,
+        hubwaris: document.getElementById('hubwaris').value
+      };
+
+      const fullData = { ...data1, ...data2 };
+      const { waNumber, leaderName } = getLeaderInfo();
+
+      const message = `Halo *${leaderName}*!%0A%0A*PENDAFTARAN MITRA BARU* 🌿%0A%0A*Nama:* ${fullData.nama}%0A*NIK:* ${fullData.nik}%0A*HP:* ${fullData.hp}%0A*Alamat KTP:* ${fullData.alamat}%0A*Domisili:* ${fullData.alamat2 || 'Sama'}%0A*Pekerjaan:* ${fullData.pekerjaan}%0A*Penghasilan:* ${fullData.penghasilan}%0A*Ibu Kandung:* ${fullData.ibu}%0A*Bank:* ${fullData.bank} - ${fullData.norek}%0A*Ahli Waris:* ${fullData.waris} (${fullData.hubwaris})%0A%0AMohon proses closing ya Leader! Terima kasih 🙏`;
+
+      alert('Pendaftaran Berhasil! Dialihkan ke WA ' + leaderName);
+      window.location.href = `https://wa.me/${waNumber}?text=${message}`;
+      localStorage.clear();
+    };
+  </script>
+</body>
+</html>
