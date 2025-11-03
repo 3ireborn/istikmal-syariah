@@ -15,7 +15,7 @@ const leaders = {
 function getLeaderInfo() {
   const params = new URLSearchParams(window.location.search);
   const leaderKey = params.get("leader");
-  const waNumber = leaders[leaderKey] || leaders.sugiarto; // Default Sugiarto kalau random
+  const waNumber = leaders[leaderKey] || leaders.sugiarto;
   const leaderName = leaderKey ? leaderKey.charAt(0).toUpperCase() + leaderKey.slice(1) : "Leader Terdekat";
   return { waNumber, leaderName };
 }
