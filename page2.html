@@ -18,7 +18,7 @@
       <h2>Halaman 2 – Data Tambahan</h2>
       <h3>Lengkapi Data & Kirim</h3>
 
-      <!-- e-KTP UPLOAD BARU -->
+      <!-- e-KTP UPLOAD -->
       <h3>Upload Foto e-KTP 📸</h3>
       <label for="ktp">Foto KTP (wajib, max 5MB)</label>
       <input type="file" id="ktp" accept="image/*" required>
@@ -68,14 +68,14 @@
 
   <script src="leader.js"></script>
   <script>
-    // Ambil data Halaman 1 dari localStorage
+    // Ambil data Halaman 1
     const data1 = JSON.parse(localStorage.getItem('formData')) || {};
 
-    // Preview e-KTP glow
+    // Preview e-KTP
     let ktpBase64 = '';
     document.getElementById('ktp').addEventListener('change', function(e) {
       const file = e.target.files[0];
-      if (file && file.size < 5000000) { // Max 5MB
+      if (file && file.size < 5000000) {
         const reader = new FileReader();
         reader.onload = function(ev) {
           ktpBase64 = ev.target.result;
@@ -88,14 +88,14 @@
       }
     });
 
-    // Tombol Kembali bawa leader param
+    // Tombol Kembali
     document.getElementById('backTo1').onclick = function() {
       const params = new URLSearchParams(window.location.search);
       const leader = params.get('leader') ? '?leader=' + params.get('leader') : '';
       window.location.href = "index.html" + leader;
     };
 
-    // Kirim ke WA leader
+    // Kirim ke WA (FIX NO BLOCK)
     document.getElementById('kirim').onclick = function() {
       const data2 = {
         alamatDom: document.getElementById('alamatDom').value,
@@ -133,7 +133,13 @@
       msg += `%0A*e-KTP:* [Lihat Foto KTP](${fullData.ktp})%0A%0A`;
       msg += `Mohon proses closing ya Leader! 🙏`;
 
-      window.open(`https://wa.me/${waNumber}?text=${msg}`, '_blank');
+      // FIX BLOCK: Delay + tab focus
+      setTimeout(() => {
+        const waTab = window.open(`https://wa.me/${waNumber}?text=${msg}`, '_blank');
+        if (waTab) waTab.focus();
+      }, 1000);
+
+      alert('Sukses! WA leader terbuka di tab baru – cek ya!');
       window.location.href = "sukses.html";
     };
   </script>
