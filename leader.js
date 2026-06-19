@@ -12,7 +12,7 @@ const leaders = {
     title: "Mitra 3IReborn"
   },
   
-"tini": {
+"tini tabrani": {
     nama: "Queen Tini Tabrani",
     wa: "6281318338844",
     title: "Queen 3IReborn"
