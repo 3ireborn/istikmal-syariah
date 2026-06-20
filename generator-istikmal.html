@@ -8,25 +8,33 @@
 
 <style>
 
-body{
+*{
+box-sizing:border-box;
 font-family:Arial,sans-serif;
-background:#063d2b;
-color:white;
-padding:20px;
-max-width:700px;
-margin:auto;
 }
 
-.card{
-background:#0b513b;
+body{
+margin:0;
+background:#063d2b;
+color:white;
+}
+
+.container{
+max-width:700px;
+margin:auto;
 padding:20px;
-border-radius:20px;
-margin-bottom:20px;
 }
 
 h1{
 text-align:center;
 color:#d8c26a;
+}
+
+.card{
+background:#0b513b;
+padding:25px;
+border-radius:25px;
+margin-bottom:20px;
 }
 
 label{
@@ -37,36 +45,36 @@ margin-bottom:5px;
 
 input,select,textarea{
 width:100%;
-padding:12px;
-border-radius:10px;
+padding:14px;
 border:none;
+border-radius:12px;
 font-size:16px;
 }
 
 button{
 width:100%;
-padding:15px;
+padding:16px;
 border:none;
-border-radius:50px;
+border-radius:40px;
+margin-top:15px;
 font-size:18px;
 font-weight:bold;
-margin-top:15px;
 background:#d8c26a;
 color:#063d2b;
 cursor:pointer;
 }
 
-.output{
-background:#fff;
-color:#000;
+.result{
+background:#02291d;
 padding:15px;
-border-radius:10px;
-margin-top:15px;
+border-radius:15px;
 word-break:break-all;
+margin-top:15px;
 }
 
-textarea{
-height:120px;
+#qrcode{
+text-align:center;
+margin-top:20px;
 }
 
 </style>
@@ -74,27 +82,38 @@ height:120px;
 
 <body>
 
+<div class="container">
+
 <h1>
-🕋 Generator Referral<br>
-Istikmal Syariah
+🕋 Generator Referral Istikmal Syariah
 </h1>
 
 <div class="card">
 
 <label>Nama Leader</label>
-<input type="text" id="nama">
+<input
+type="text"
+id="nama"
+placeholder="Agnes Marsilah"
+onkeyup="buatSlug()">
 
 <label>Nomor WhatsApp</label>
-<input type="text" id="wa" placeholder="628xxxx">
+<input
+type="text"
+id="wa"
+placeholder="628xxxx">
 
 <label>Username / Slug</label>
-<input type="text" id="slug" placeholder="agnes">
+<input
+type="text"
+id="slug"
+placeholder="agnes">
 
 <label>Title</label>
 <select id="title">
 <option>Mitra 3IReborn</option>
-<option>Queen 3IReborn</option>
-<option>Pendekar Bertangan Satu</option>
+<option>Leader 3IReborn</option>
+<option>Entrepreneur 3IReborn</option>
 </select>
 
 <button onclick="generateLink()">
@@ -105,45 +124,83 @@ Istikmal Syariah
 
 <div class="card">
 
-<h3>🔗 Link Referral</h3>
+<h2>🔗 Link Referral</h2>
 
-<div id="linkResult" class="output">
-Belum dibuat...
+<div id="hasilLink" class="result">
+Belum dibuat
 </div>
 
 <button onclick="copyLink()">
-📋 Copy Link
+📋 Copy Link Referral
+</button>
+
+<button onclick="previewLP()">
+👁 Preview LP
+</button>
+
+<button onclick="testWA()">
+📱 Test WhatsApp
 </button>
 
 </div>
 
 <div class="card">
 
-<h3>📄 Kode leader.js</h3>
+<h2>📄 Kode Leader.js</h2>
 
-<textarea id="leaderCode"></textarea>
+<textarea id="hasilKode" rows="8"></textarea>
 
 <button onclick="copyCode()">
-📋 Copy Kode
+📋 Copy Kode Leader.js
 </button>
 
 </div>
 
+<div class="card">
+
+<h2>📱 QR Code Referral</h2>
+
+<div id="qrcode"></div>
+
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 <script>
+
+let referralLink = "";
+
+function buatSlug(){
+
+let nama =
+document.getElementById("nama")
+.value
+.toLowerCase()
+.trim();
+
+nama =
+nama.replace(/\s+/g,"-");
+
+document.getElementById("slug").value =
+nama;
+
+}
 
 function generateLink(){
 
 let nama =
-document.getElementById('nama').value.trim();
+document.getElementById("nama").value;
 
 let wa =
-document.getElementById('wa').value.trim();
+document.getElementById("wa").value;
 
 let slug =
-document.getElementById('slug').value.trim().toLowerCase();
+document.getElementById("slug").value;
 
 let title =
-document.getElementById('title').value;
+document.getElementById("title").value;
 
 if(!nama || !wa || !slug){
 
@@ -153,43 +210,91 @@ return;
 
 }
 
-let link =
-"https://3ireborn.github.io/istikmal-syariah/?leader="+slug;
+referralLink =
+"https://3ireborn.github.io/istikmal-syariah/?leader="
++slug;
 
-document.getElementById("linkResult").innerHTML =
-link;
+document.getElementById("hasilLink")
+.innerHTML =
+referralLink;
 
 let kode =
 `"${slug}": {
- nama: "${nama}",
- wa: "${wa}",
- title: "${title}"
+nama: "${nama}",
+wa: "${wa}",
+title: "${title}"
 },`;
 
-document.getElementById("leaderCode").value =
-kode;
+document.getElementById("hasilKode")
+.value = kode;
+
+document.getElementById("qrcode")
+.innerHTML = "";
+
+new QRCode(
+document.getElementById("qrcode"),
+referralLink
+);
 
 }
 
 function copyLink(){
 
-let text =
-document.getElementById("linkResult").innerText;
+navigator.clipboard.writeText(
+referralLink
+);
 
-navigator.clipboard.writeText(text);
-
-alert("Link berhasil dicopy");
+alert("Link referral berhasil dicopy");
 
 }
 
 function copyCode(){
 
-let text =
-document.getElementById("leaderCode").value;
-
-navigator.clipboard.writeText(text);
+navigator.clipboard.writeText(
+document.getElementById("hasilKode").value
+);
 
 alert("Kode leader.js berhasil dicopy");
+
+}
+
+function previewLP(){
+
+let slug =
+document.getElementById("slug").value;
+
+if(!slug){
+
+alert("Buat referral dulu");
+
+return;
+
+}
+
+window.open(
+"https://3ireborn.github.io/istikmal-syariah/?leader="+slug,
+"_blank"
+);
+
+}
+
+function testWA(){
+
+let wa =
+document.getElementById("wa").value;
+
+if(!wa){
+
+alert("Isi nomor WA dulu");
+
+return;
+
+}
+
+window.open(
+"https://wa.me/"+wa,
+"_blank"
+);
 
 }
 
