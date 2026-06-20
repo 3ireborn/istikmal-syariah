@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Generator Referral Istikmal Syariah V3.i</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+margin:0;
+background:#063d2b;
+color:white;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+padding:20px;
+}
+
+.logo{
+text-align:center;
+margin-bottom:20px;
+}
+
+.logo img{
+width:180px;
+}
+
+h1{
+text-align:center;
+color:#d8c26a;
+margin-bottom:5px;
+}
+
+.subtitle{
+text-align:center;
+line-height:1.7;
+margin-bottom:25px;
+}
+
+.card{
+background:#0b513b;
+padding:25px;
+border-radius:25px;
+margin-bottom:20px;
+}
+
+label{
+display:block;
+margin-top:15px;
+margin-bottom:5px;
+font-weight:bold;
+}
+
+input,select,textarea{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:16px;
+border:none;
+border-radius:40px;
+margin-top:12px;
+font-size:18px;
+font-weight:bold;
+background:#d8c26a;
+color:#063d2b;
+cursor:pointer;
+}
+
+.result{
+background:#02291d;
+padding:15px;
+border-radius:15px;
+margin-top:15px;
+word-break:break-all;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+opacity:.9;
+font-size:14px;
+line-height:1.8;
+}
+
+#qrcode{
+text-align:center;
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+<img src="assets/logo-istikmal.png">
+</div>
+
+<h1>
+🕋 Generator Referral Istikmal Syariah V3.i
+</h1>
+
+<div class="subtitle">
+
+Versi Terbaru V3.i
+
+<br><br>
+
+Bangkit • Bertumbuh • Berjuang
+
+<br>
+
+Buat Link Referral Profesional
+Dalam Hitungan Detik
+
+<br>
+
+Tanpa Edit Kode • Tanpa Ribet
+
+</div>
+
+<div class="card">
+
+<label>Nama Leader</label>
+<input
+type="text"
+id="nama"
+placeholder="Agnes Marsilah">
+
+<label>Nomor WhatsApp</label>
+<input
+type="text"
+id="wa"
+placeholder="6285932684400">
+
+<label>Title</label>
+<select id="title">
+<option>Mitra 3IReborn</option>
+<option>Leader Entrepreneur</option>
+<option>Team Entrepreneur</option>
+<option>Queen 3IReborn</option>
+</select>
+
+<button onclick="generateReferral()">
+🚀 Generate Referral
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>🔗 Link Landing Page</h3>
+
+<div id="lpLink" class="result">
+Belum dibuat
+</div>
+
+<button onclick="copyLP()">
+📋 Copy Link LP
+</button>
+
+<button onclick="previewLP()">
+👁 Preview LP
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>📱 Link WhatsApp</h3>
+
+<div id="waLink" class="result">
+Belum dibuat
+</div>
+
+<button onclick="copyWA()">
+📋 Copy Link WA
+</button>
+
+<button onclick="testWA()">
+📱 Test WhatsApp
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>📱 QR Code Referral</h3>
+
+<div id="qrcode"></div>
+
+</div>
+
+<div class="footer">
+
+━━━━━━━━━━━━━━━━━━
+
+<br><br>
+
+<b>3IReborn Digital System</b>
+
+<br><br>
+
+Generator Referral
+Istikmal Syariah V3.i
+
+<br><br>
+
+Created by
+
+<br>
+
+<b>DISABILITAS PUNYA KARYA</b>
+
+<br><br>
+
+"Keterbatasan Bukan Penghalang
+Untuk Berkarya dan Bermanfaat"
+
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+
+let landingPage="";
+let whatsappLink="";
+
+function generateReferral(){
+
+const nama =
+document.getElementById("nama").value.trim();
+
+const wa =
+document.getElementById("wa").value.trim();
+
+const title =
+document.getElementById("title").value;
+
+if(!nama || !wa){
+
+alert("Lengkapi data terlebih dahulu");
+
+return;
+
+}
+
+landingPage =
+"https://3ireborn.github.io/istikmal-syariah/?nama="
++ encodeURIComponent(nama)
++ "&wa="
++ encodeURIComponent(wa)
++ "&title="
++ encodeURIComponent(title);
+
+whatsappLink =
+"https://wa.me/" + wa;
+
+document.getElementById("lpLink").innerHTML =
+landingPage;
+
+document.getElementById("waLink").innerHTML =
+whatsappLink;
+
+document.getElementById("qrcode").innerHTML="";
+
+new QRCode(
+document.getElementById("qrcode"),
+landingPage
+);
+
+}
+
+function copyLP(){
+
+navigator.clipboard.writeText(
+landingPage
+);
+
+alert("Link LP berhasil dicopy");
+
+}
+
+function copyWA(){
+
+navigator.clipboard.writeText(
+whatsappLink
+);
+
+alert("Link WA berhasil dicopy");
+
+}
+
+function previewLP(){
+
+if(!landingPage){
+
+alert("Generate referral dulu");
+
+return;
+
+}
+
+window.open(
+landingPage,
+"_blank"
+);
+
+}
+
+function testWA(){
+
+if(!whatsappLink){
+
+alert("Generate referral dulu");
+
+return;
+
+}
+
+window.open(
+whatsappLink,
+"_blank"
+);
+
+}
+
+</script>
+
+</body>
+</html>
