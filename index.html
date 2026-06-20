@@ -268,10 +268,10 @@ const params = new URLSearchParams(window.location.search);
 const ref = params.get("leader") || "default";
 
 
-let nomor = leaders[ref] || leaders["default"];
+let nomor = leaders[ref]?.wa || leaders["default"].wa;
 
 
-let nama = ref.charAt(0).toUpperCase()+ref.slice(1);
+let nama = leaders[ref]?.nama || leaders["default"].nama;
 
 
 document.getElementById("leaderName").innerHTML = nama;
