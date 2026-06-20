@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Generator Referral Istikmal Syariah</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#063d2b;
+color:white;
+padding:20px;
+max-width:700px;
+margin:auto;
+}
+
+.card{
+background:#0b513b;
+padding:20px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+h1{
+text-align:center;
+color:#d8c26a;
+}
+
+label{
+display:block;
+margin-top:15px;
+margin-bottom:5px;
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:50px;
+font-size:18px;
+font-weight:bold;
+margin-top:15px;
+background:#d8c26a;
+color:#063d2b;
+cursor:pointer;
+}
+
+.output{
+background:#fff;
+color:#000;
+padding:15px;
+border-radius:10px;
+margin-top:15px;
+word-break:break-all;
+}
+
+textarea{
+height:120px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>
+🕋 Generator Referral<br>
+Istikmal Syariah
+</h1>
+
+<div class="card">
+
+<label>Nama Leader</label>
+<input type="text" id="nama">
+
+<label>Nomor WhatsApp</label>
+<input type="text" id="wa" placeholder="628xxxx">
+
+<label>Username / Slug</label>
+<input type="text" id="slug" placeholder="agnes">
+
+<label>Title</label>
+<select id="title">
+<option>Mitra 3IReborn</option>
+<option>Queen 3IReborn</option>
+<option>Pendekar Bertangan Satu</option>
+</select>
+
+<button onclick="generateLink()">
+🚀 Buat Link Referral
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>🔗 Link Referral</h3>
+
+<div id="linkResult" class="output">
+Belum dibuat...
+</div>
+
+<button onclick="copyLink()">
+📋 Copy Link
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>📄 Kode leader.js</h3>
+
+<textarea id="leaderCode"></textarea>
+
+<button onclick="copyCode()">
+📋 Copy Kode
+</button>
+
+</div>
+
+<script>
+
+function generateLink(){
+
+let nama =
+document.getElementById('nama').value.trim();
+
+let wa =
+document.getElementById('wa').value.trim();
+
+let slug =
+document.getElementById('slug').value.trim().toLowerCase();
+
+let title =
+document.getElementById('title').value;
+
+if(!nama || !wa || !slug){
+
+alert("Lengkapi data dulu");
+
+return;
+
+}
+
+let link =
+"https://3ireborn.github.io/istikmal-syariah/?leader="+slug;
+
+document.getElementById("linkResult").innerHTML =
+link;
+
+let kode =
+`"${slug}": {
+ nama: "${nama}",
+ wa: "${wa}",
+ title: "${title}"
+},`;
+
+document.getElementById("leaderCode").value =
+kode;
+
+}
+
+function copyLink(){
+
+let text =
+document.getElementById("linkResult").innerText;
+
+navigator.clipboard.writeText(text);
+
+alert("Link berhasil dicopy");
+
+}
+
+function copyCode(){
+
+let text =
+document.getElementById("leaderCode").value;
+
+navigator.clipboard.writeText(text);
+
+alert("Kode leader.js berhasil dicopy");
+
+}
+
+</script>
+
+</body>
+</html>
