@@ -38,7 +38,7 @@ const leaders = {
 
   "rahmawan": {
     nama: "Rahmawan",
-    wa: "628132749829",
+    wa: "6281252340485",
     title: "Mitra 3IReborn"
   },
 
