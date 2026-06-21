@@ -108,6 +108,12 @@ title: "Mitra 3IReborn"
     title: "Mitra 3IReborn"
 },
   
+  "nova": {
+    nama: "Nova Angelina Sitorus",
+    wa: "6281316404611",
+    title: "Mitra 3IReborn"
+},
+  
   "default": {
     nama: "PakD Sugiarto Kurniawan",
     wa: "6285218453131",
