@@ -71,7 +71,22 @@ const leaders = {
     wa: "6282252161911",
     title: "Mitra 3IReborn"
   },
+  
+kijang:{
+nama:"Kijang",
+wa:"6285314645611"
+},
 
+kombet:{
+nama:"Kombet",
+wa:"6282221978889"
+},
+
+lutfi:{
+nama:"Lutfi",
+wa:"6283893388848"
+  
+}
   "default": {
     nama: "PakD Sugiarto Kurniawan",
     wa: "6285218453131",
