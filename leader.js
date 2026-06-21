@@ -13,7 +13,7 @@ const leaders = {
   },
   
 "tini": {
-    nama: "Queen Tini Tabrani",
+    nama: "Queen Tini",
     wa: "6281318338844",
     title: "Queen 3IReborn"
   },
