@@ -90,6 +90,11 @@ wa:"6283893388848",
 title: "Mitra 3IReborn"
 },
   
+  "ashar": {
+    nama: "La Ode Ashar Hadini, S.M., M.M.",
+    wa: "6285398088956",
+    title: "Mitra 3IReborn"
+},
   "default": {
     nama: "PakD Sugiarto Kurniawan",
     wa: "6285218453131",
