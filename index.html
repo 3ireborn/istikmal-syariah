@@ -296,40 +296,5 @@ document.getElementById("waBtn2").href=link;
 
 </script>
 
-<script src="leader.js"></script><script>
-
-// ======================
-// ISTIKMAL V3 REFERRAL
-// ======================
-
-const params = new URLSearchParams(window.location.search);
-
-// Ambil leader dari URL
-const ref = params.get('leader') || 'default';
-
-// Ambil data leader dari leader.js
-const leader = leaders[ref] || leaders['default'];
-
-// Tampilkan nama leader
-document.getElementById('leaderName').innerHTML = leader.nama;
-document.getElementById('leaderName2').innerHTML = leader.nama;
-
-// Pesan WhatsApp
-const pesan =
-`Assalamu'alaikum Kak ${leader.nama},
-
-Saya ingin mengetahui program Istikmal Syariah bersama 3IReborn.
-
-Mohon informasi lebih lanjut 🙏`;
-
-// Link WhatsApp
-const waLink =
-`https://wa.me/${leader.wa}?text=${encodeURIComponent(pesan)}`;
-
-// Tombol
-document.getElementById('waBtn1').href = waLink;
-document.getElementById('waBtn2').href = waLink;
-
-  </script>
 </body>
 </html>
