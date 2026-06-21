@@ -75,16 +75,19 @@ const leaders = {
 "kijang":{
 nama:"Kijang",
 wa:"6285314645611"
+  title: "Mitra 3IReborn"
 },
 
 "kombet":{
 nama:"Kombet",
 wa:"6282221978889"
+  title: "Mitra 3IReborn"
 },
 
 "lutfi":{
 nama:"Lutfi",
 wa:"6283893388848"
+  title: "Mitra 3IReborn"
   },
   
   "default": {
