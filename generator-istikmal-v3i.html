@@ -4,20 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Generator Referral Istikmal Syariah V3.i</title>
+
 <style>
-/* Style kamu tetap sama, saya tidak ubah */
-* { box-sizing:border-box; font-family:Arial,sans-serif; }
-body { margin:0; background:#063d2b; color:white; }
+* { box-sizing: border-box; font-family: Arial, sans-serif; }
+body { 
+    margin:0; 
+    background: linear-gradient(180deg, #063d2b, #0a3d2b); 
+    color:white; 
+}
 .container { max-width:800px; margin:auto; padding:20px; }
 .logo { text-align:center; margin-bottom:20px; }
 .logo img { width:180px; }
-h1 { text-align:center; color:#d8c26a; margin-bottom:5px; }
-.subtitle { text-align:center; line-height:1.7; margin-bottom:25px; }
-.card { background:#0b513b; padding:25px; border-radius:25px; margin-bottom:20px; }
-label { display:block; margin-top:15px; margin-bottom:5px; font-weight:bold; }
-input,select,textarea { width:100%; padding:14px; border:none; border-radius:12px; font-size:16px; }
-button { width:100%; padding:16px; border:none; border-radius:40px; margin-top:12px; font-size:18px; font-weight:bold; background:#d8c26a; color:#063d2b; cursor:pointer; }
-.result { background:#02291d; padding:15px; border-radius:15px; margin-top:15px; word-break:break-all; font-size:14px; }
+h1 { 
+    text-align:center; 
+    color:#d8c26a; 
+    margin-bottom:5px; 
+    font-size:28px;
+}
+.subtitle { 
+    text-align:center; 
+    line-height:1.7; 
+    margin-bottom:30px; 
+    font-size:16px;
+}
+.card { 
+    background:#0b513b; 
+    padding:28px; 
+    border-radius:25px; 
+    margin-bottom:25px; 
+    border:1px solid #d8c26a33;
+}
+label { 
+    display:block; 
+    margin:18px 0 8px; 
+    font-weight:bold; 
+    color:#d8c26a;
+}
+input, select { 
+    width:100%; 
+    padding:14px; 
+    border:none; 
+    border-radius:12px; 
+    font-size:16px; 
+    background:#02291d; 
+    color:white;
+}
+button { 
+    width:100%; 
+    padding:18px; 
+    border:none; 
+    border-radius:50px; 
+    margin-top:15px; 
+    font-size:19px; 
+    font-weight:bold; 
+    background:linear-gradient(90deg, #d8c26a, #f0d38a); 
+    color:#063d2b; 
+    cursor:pointer;
+    box-shadow: 0 6px 12px rgba(216, 194, 106, 0.3);
+}
+.result { 
+    background:#02291d; 
+    padding:16px; 
+    border-radius:15px; 
+    margin-top:12px; 
+    word-break:break-all; 
+    font-size:14.5px; 
+    line-height:1.5;
+}
 </style>
 </head>
 <body>
@@ -29,10 +82,10 @@ button { width:100%; padding:16px; border:none; border-radius:40px; margin-top:1
 
   <div class="card">
     <label>Nama Leader</label>
-    <input type="text" id="nama" placeholder="Agnes Marsilah">
+    <input type="text" id="nama" placeholder="Contoh: PakD Sugiarto">
 
     <label>Nomor WhatsApp</label>
-    <input type="text" id="wa" placeholder="6285932684400">
+    <input type="text" id="wa" placeholder="628xxxxxxxxxx">
 
     <label>Title / Jabatan</label>
     <select id="title">
@@ -67,7 +120,7 @@ button { width:100%; padding:16px; border:none; border-radius:40px; margin-top:1
 
   <div class="card">
     <h3>📱 QR Code Referral</h3>
-    <div id="qrcode" style="text-align:center; margin-top:20px;"></div>
+    <div id="qrcode" style="text-align:center; margin-top:20px; padding:15px; background:#02291d; border-radius:15px;"></div>
   </div>
 </div>
 
@@ -83,11 +136,10 @@ function generateReferral(){
   const title = document.getElementById("title").value;
 
   if(!nama || !wa){
-    alert("❌ Lengkapi Nama dan Nomor WhatsApp!");
+    alert("❌ Mohon lengkapi Nama Leader dan Nomor WhatsApp!");
     return;
   }
 
-  // Link Landing Page dengan parameter
   landingPage = `https://3ireborn.github.io/istikmal-syariah/?nama=${encodeURIComponent(nama)}&wa=${encodeURIComponent(wa)}&title=${encodeURIComponent(title)}`;
   
   whatsappLink = `https://wa.me/${wa}`;
@@ -95,15 +147,33 @@ function generateReferral(){
   document.getElementById("lpLink").innerHTML = landingPage;
   document.getElementById("waLink").innerHTML = whatsappLink;
 
-  // Generate QR Code
+  // QR Code
   document.getElementById("qrcode").innerHTML = "";
-  new QRCode(document.getElementById("qrcode"), landingPage);
+  new QRCode(document.getElementById("qrcode"), {
+    text: landingPage,
+    width: 220,
+    height: 220,
+    colorDark : "#c0c0c0",
+    colorLight : "#02291d"
+  });
+
+  alert("✅ Referral berhasil dibuat!");
 }
 
-function copyLP(){ navigator.clipboard.writeText(landingPage); alert("✅ Link LP berhasil dicopy!"); }
-function copyWA(){ navigator.clipboard.writeText(whatsappLink); alert("✅ Link WA berhasil dicopy!"); }
-function previewLP(){ if(landingPage) window.open(landingPage, "_blank"); }
-function testWA(){ if(whatsappLink) window.open(whatsappLink, "_blank"); }
+function copyLP(){ 
+  navigator.clipboard.writeText(landingPage); 
+  alert("✅ Link Landing Page berhasil dicopy!"); 
+}
+function copyWA(){ 
+  navigator.clipboard.writeText(whatsappLink); 
+  alert("✅ Link WhatsApp berhasil dicopy!"); 
+}
+function previewLP(){ 
+  if(landingPage) window.open(landingPage, "_blank"); 
+}
+function testWA(){ 
+  if(whatsappLink) window.open(whatsappLink, "_blank"); 
+}
 </script>
 </body>
 </html>
