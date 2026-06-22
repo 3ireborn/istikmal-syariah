@@ -6,17 +6,83 @@
 <title>Istikmal Syariah by 3IReborn</title>
 
 <style>
-* { box-sizing:border-box; font-family:Arial, sans-serif; }
-body { margin:0; background:#063d2b; color:white; }
-.container { max-width:700px; margin:auto; padding:25px; }
-.hero { text-align:center; padding:50px 10px; }
-.logo { font-size:32px; font-weight:bold; color:#d8c26a; }
-h1 { font-size:36px; line-height:1.2; color:#fff; }
-.gold { color:#d8c26a; }
-.card { background:#0b513b; border-radius:25px; padding:25px; margin:20px 0; border:1px solid #d8c26a55; }
-.btn { display:block; background:#d8c26a; color:#063d2b; text-align:center; padding:18px; border-radius:40px; font-weight:bold; text-decoration:none; font-size:20px; margin-top:25px; }
-ul { line-height:2; }
-.footer { text-align:center; font-size:14px; opacity:.8; padding:30px; }
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #0a3d2b, #063d2b);
+    color: white;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 10px 30px;
+}
+
+.logo img {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 42px;
+    line-height: 1.1;
+    margin: 15px 0;
+    color: #fff;
+}
+
+.gold {
+    color: #d4af37;
+}
+
+.silver {
+    color: #c0c0c0;
+}
+
+.card {
+    background: #0b513b;
+    border-radius: 25px;
+    padding: 28px;
+    margin: 20px 0;
+    border: 1px solid #c0c0c055;
+}
+
+.btn {
+    display: block;
+    background: linear-gradient(90deg, #c0c0c0, #e5e5e5);
+    color: #063d2b;
+    text-align: center;
+    padding: 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 21px;
+    margin: 25px 0 10px;
+    box-shadow: 0 8px 15px rgba(192, 192, 192, 0.3);
+}
+
+.rank {
+    font-size: 22px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.85;
+    padding: 35px 10px;
+    line-height: 1.6;
+}
 </style>
 </head>
 
@@ -25,17 +91,24 @@ ul { line-height:2; }
 <div class="container">
 
 <section class="hero">
-  <div style="text-align:center;margin-bottom:25px;">
-    <img src="assets/logo-istikmal.png" alt="Logo Istikmal Syariah" style="width:170px;">
+  <div style="text-align:center;margin-bottom:15px;">
+    <img src="assets/logo-istikmal.png" alt="Logo Istikmal Syariah" style="width:180px;">
   </div>
 
-  <h1>BISNIS BERKAH<br><span class="gold">MENGANTARKAN<br>SAMPAI KE MEKAH</span></h1>
+  <h1>
+    BISNIS BERKAH<br>
+    <span class="gold">MENGANTARKAN<br>SAMPAI KE MEKAH</span>
+  </h1>
 
-  <p>Bersama 3IReborn<br>Bangkit • Bertumbuh • Berjuang</p>
-
-  <p>Dipresentasikan oleh:<br>
-    <b id="leaderName">Mitra 3IReborn</b>
+  <p style="font-size:19px;margin:20px 0;">
+    Bersama 3IReborn<br>
+    Bangkit • Bertumbuh • Berjuang
   </p>
+
+  <p style="font-size:18px;">
+    Dipresentasikan oleh:
+  </p>
+  <div id="leaderName" class="rank silver"></div>
 
   <a id="waBtn1" class="btn">💬 Konsultasi Sekarang</a>
 </section>
@@ -57,7 +130,7 @@ ul { line-height:2; }
 
 <div class="card">
   <h2>📌 Pilihan Kontribusi</h2>
-  <ul>
+  <ul style="font-size:17px;line-height:2.2;">
     <li>Rp350.000 / bulan</li>
     <li>Rp500.000 / bulan</li>
     <li>Rp700.000 / bulan</li>
@@ -68,7 +141,7 @@ ul { line-height:2; }
 
 <div class="card">
   <h2>3 Manfaat Dalam Satu Sistem</h2>
-  <ul>
+  <ul style="font-size:17px;line-height:2.2;">
     <li>🛡 Proteksi</li>
     <li>📈 Perencanaan Keuangan Syariah</li>
     <li>🤝 Peluang Bisnis 3IReborn</li>
@@ -78,41 +151,44 @@ ul { line-height:2; }
 <div class="card">
   <h2>Ingin mengetahui lebih lengkap?</h2>
   <p>Silakan konsultasi dengan:</p>
-  <h2 id="leaderName2" class="gold">Mitra 3IReborn</h2>
-  <a id="waBtn2" class="btn">Hubungi WhatsApp</a>
+  <div id="leaderName2" class="rank silver"></div>
+  <a id="waBtn2" class="btn">💬 Hubungi WhatsApp</a>
 </div>
 
 <div class="footer">
   Powered by <b>3IReborn</b><br><br>
-  Bukan Sekedar Menabung, Tapi Membangun Masa Depan
+  Bukan Sekedar Menabung,<br>
+  Tapi Membangun Masa Depan
 </div>
 
 </div>
 
-<!-- Script Utama -->
 <script>
-// Ambil data dari URL Parameter (dari Generator)
+// Ambil data dari URL Parameter
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
 }
 
-let leaderName = getQueryParam("nama") || "Mitra 3IReborn";
-let leaderWA   = getQueryParam("wa")   || "6285218453131";   // default PakD
-let leaderTitle = getQueryParam("title") || "";
+let nama  = getQueryParam("nama")  || "Mitra 3IReborn";
+let wa    = getQueryParam("wa")    || "6285218453131";
+let title = getQueryParam("title") || "";
 
-if (leaderTitle) {
-    leaderName = leaderTitle + " - " + leaderName;
+let tampilNama = nama;
+
+// Format nama sesuai request
+if (title) {
+    tampilNama = `${title} - ${nama}`;
 }
 
-// Tampilkan Nama Leader
-document.getElementById("leaderName").innerHTML = leaderName;
-document.getElementById("leaderName2").innerHTML = leaderName;
+// Tampilkan nama
+document.getElementById("leaderName").innerHTML = tampilNama;
+document.getElementById("leaderName2").innerHTML = tampilNama;
 
-// Buat Link WhatsApp
-const pesan = `Halo Kak ${leaderName}, saya ingin mengetahui program Istikmal Syariah 3IReborn 🙏`;
+// Link WhatsApp
+const pesan = `Halo Kak ${tampilNama}, saya ingin mengetahui lebih lanjut tentang program Istikmal Syariah 3IReborn 🙏`;
 
-const waLink = `https://wa.me/${leaderWA}?text=${encodeURIComponent(pesan)}`;
+const waLink = `https://wa.me/${wa}?text=${encodeURIComponent(pesan)}`;
 
 document.getElementById("waBtn1").href = waLink;
 document.getElementById("waBtn2").href = waLink;
