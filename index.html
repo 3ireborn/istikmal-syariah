@@ -6,46 +6,32 @@
 <title>Istikmal Syariah by 3IReborn</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+* { box-sizing: border-box; font-family: Arial, sans-serif; }
+body { 
+    margin: 0; 
+    background: linear-gradient(180deg, #0a3d2b, #063d2b); 
+    color: white; 
+}
+.container { max-width: 700px; margin: auto; padding: 20px; }
+.hero { text-align: center; padding: 40px 10px 30px; }
+
+.logo img { width: 180px; margin-bottom: 20px; }
+
+h1 { 
+    font-size: 44px; 
+    line-height: 1.05; 
+    margin: 15px 0; 
+    color: #fff; 
 }
 
-body {
-    margin: 0;
-    background: linear-gradient(180deg, #0a3d2b, #063d2b);
-    color: white;
-}
+.gold { color: #d4af37; }
+.silver { color: #c0c0c0; }
 
-.container {
-    max-width: 700px;
-    margin: auto;
-    padding: 20px;
-}
-
-.hero {
-    text-align: center;
-    padding: 40px 10px 30px;
-}
-
-.logo img {
-    width: 180px;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 42px;
-    line-height: 1.1;
-    margin: 15px 0;
-    color: #fff;
-}
-
-.gold {
-    color: #d4af37;
-}
-
-.silver {
-    color: #c0c0c0;
+.rank {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 12px 0 20px;
+    line-height: 1.3;
 }
 
 .card {
@@ -68,12 +54,6 @@ h1 {
     font-size: 21px;
     margin: 25px 0 10px;
     box-shadow: 0 8px 15px rgba(192, 192, 192, 0.3);
-}
-
-.rank {
-    font-size: 22px;
-    margin: 10px 0;
-    font-weight: bold;
 }
 
 .footer {
@@ -105,9 +85,7 @@ h1 {
     Bangkit • Bertumbuh • Berjuang
   </p>
 
-  <p style="font-size:18px;">
-    Dipresentasikan oleh:
-  </p>
+  <p style="font-size:18px;">Dipresentasikan oleh:</p>
   <div id="leaderName" class="rank silver"></div>
 
   <a id="waBtn1" class="btn">💬 Konsultasi Sekarang</a>
@@ -164,7 +142,20 @@ h1 {
 </div>
 
 <script>
-// Ambil data dari URL Parameter
+// Mapping Emoji peringkat
+const rankEmojis = {
+    "Mitra 3IReborn": "⭐",
+    "Team Entrepreneur": "👥",
+    "Leader Entrepreneur": "🏆",
+    "Bronze Entrepreneur": "🥉",
+    "Silver Entrepreneur": "🥈",
+    "Gold Entrepreneur": "🥇",
+    "Diamond Executive": "💎",
+    "Royal Executive": "👑",
+    "King Executive": "🤴",
+    "Queen 3IReborn": "👸"
+};
+
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
@@ -175,13 +166,13 @@ let wa    = getQueryParam("wa")    || "6285218453131";
 let title = getQueryParam("title") || "";
 
 let tampilNama = nama;
+let emoji = rankEmojis[title] || "🌟";
 
-// Format nama sesuai request
 if (title) {
-    tampilNama = `${nama} - ${title}`;
+    tampilNama = `${emoji} ${title} - ${nama}`;
 }
 
-// Tampilkan nama
+// Tampilkan
 document.getElementById("leaderName").innerHTML = tampilNama;
 document.getElementById("leaderName2").innerHTML = tampilNama;
 
