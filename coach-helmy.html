@@ -3,35 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Istikmal Syariah - Ketenangan Finansial Dunia Akhirat</title>
+    <title>Istikmal Syariah - Ikhtiar Menuju Baitullah 2026 bersama Coach Helmy</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: auto; padding: 0; background-color: #f4fcf8; }
         .container { background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.05); overflow: hidden; }
         
         /* 1. HEADER */
         .header { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #065f46, #047857); color: white; border-bottom: 5px solid #f59e0b; }
-        .header h1 { font-size: 28px; margin-bottom: 15px; line-height: 1.2; font-weight: 800; color: #fcd34d; }
-        .header p { font-size: 16px; font-weight: 400; opacity: 0.9; margin-bottom: 20px; }
+        .header h1 { font-size: 26px; margin-bottom: 15px; line-height: 1.2; font-weight: 800; color: #fcd34d; }
+        .header p { font-size: 15px; font-weight: 400; opacity: 0.9; margin-bottom: 20px; }
         
-        /* 2. BODY (FITUR & MANFAAT) */
-        .body-section { padding: 30px 20px; text-align: center; }
-        .body-section h2 { color: #065f46; font-size: 22px; margin-bottom: 20px; }
-        .card-benefit { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: left; border-left: 5px solid #10b981; }
-        .card-benefit h3 { color: #047857; margin-top: 0; margin-bottom: 10px; font-size: 18px; }
+        /* ABOUT ME / PROFILE CARD */
+        .profile-section { background: #ffffff; padding: 30px 20px; text-align: center; border-bottom: 1px solid #e5e7eb; }
+        .profile-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid #059669; box-shadow: 0 8px 16px rgba(0,0,0,0.15); margin-bottom: 15px; }
+        .profile-section h2 { color: #065f46; margin: 5px 0; font-size: 22px; }
+        .profile-role { color: #d97706; font-weight: bold; font-size: 14px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .profile-bio { font-size: 14px; color: #4b5563; text-align: justify; background: #f0fdf4; padding: 15px; border-radius: 10px; border-left: 4px solid #059669; }
+
+        /* 2. BODY (PILAR & CARA MENUJU BAITULLAH) */
+        .body-section { padding: 30px 20px; }
+        .body-section h2 { color: #065f46; font-size: 22px; margin-bottom: 20px; text-align: center; }
+        .card-benefit { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid #10b981; }
+        .card-benefit h3 { color: #047857; margin-top: 0; margin-bottom: 10px; font-size: 17px; }
         
         /* 3. TESTIMONIAL */
         .testimonial-section { background: #fffbeb; padding: 30px 20px; text-align: center; border-top: 2px dashed #fcd34d; border-bottom: 2px dashed #fcd34d; }
-        .testimonial-box { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(245, 158, 11, 0.15); position: relative; }
+        .testimonial-box { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(245, 158, 11, 0.15); position: relative; text-align: left; }
         .testimonial-box::before { content: '❝'; font-size: 40px; color: #f59e0b; position: absolute; top: -10px; left: 20px; opacity: 0.5; }
-        .testimonial-text { font-style: italic; color: #4b5563; font-size: 15px; margin-bottom: 15px; }
-        .testimonial-author { font-weight: bold; color: #065f46; font-size: 16px; }
-        .badge { display: inline-block; background: #f59e0b; color: white; padding: 3px 8px; border-radius: 4px; font-size: 12px; margin-top: 5px; }
+        .testimonial-text { font-style: italic; color: #4b5563; font-size: 14px; margin-bottom: 15px; line-height: 1.6; }
+        .testimonial-author { font-weight: bold; color: #065f46; font-size: 15px; }
+        .badge { display: inline-block; background: #f59e0b; color: white; padding: 3px 8px; border-radius: 4px; font-size: 12px; margin-top: 5px; font-weight: bold; }
 
         /* 4. FAQ */
         .faq-section { padding: 30px 20px; background: #ffffff; }
         .faq-section h2 { color: #065f46; font-size: 22px; text-align: center; margin-bottom: 20px; }
         .faq-item { margin-bottom: 15px; border-bottom: 1px solid #e5e7eb; padding-bottom: 15px; }
-        .faq-q { font-weight: bold; color: #111827; margin-bottom: 5px; display: flex; align-items: flex-start; gap: 10px; }
+        .faq-q { font-weight: bold; color: #111827; margin-bottom: 5px; display: flex; align-items: flex-start; gap: 10px; font-size: 15px; }
         .faq-a { color: #4b5563; font-size: 14px; padding-left: 25px; }
 
         /* 5. FOOTER & CTA */
@@ -51,76 +58,87 @@
         <!-- 1. HEADER -->
         <div class="header">
             <div style="background: rgba(255,255,255,0.2); display: inline-block; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 15px; letter-spacing: 1px;">PROGRAM EKSKLUSIF 3IREBORN</div>
-            <h1>Raih Ketenangan Finansial Dunia & Akhirat</h1>
-            <p>Solusi cerdas persiapkan dana masa depan dan proteksi keluarga dengan sistem Istikmal Syariah yang Halal, Aman, dan Menguntungkan.</p>
-            <a href="#cta" class="btn-wa">MULAI BERHIJRAH FINANSIAL</a>
+            <h1>Ikhtiar Menuju Baitullah 2026</h1>
+            <p>Wujudkan impian beribadah ke Tanah Suci dengan cara yang lebih terencana, aman, berkah, dan sesuai prinsip Syariah.</p>
+            <a href="#cta" class="btn-wa">KONSULTASI GRATIS VIA WA</a>
         </div>
 
-        <!-- 2. BODY -->
+        <!-- ABOUT ME SECTION -->
+        <div class="profile-section">
+            <!-- Gunakan foto resmi Coach Helmy -->
+            <img src="coach-helmy.jpg" alt="Coach Helmy" class="profile-img">
+            <h2>Coach Helmy</h2>
+            <div class="profile-role">Leader Entrepreneur 3iReborn</div>
+            <p class="profile-bio">
+                "Selamat datang di program Istikmal Syariah. Berangkat ke Baitullah bukan sekadar soal memiliki uang tunai saat ini, melainkan tentang seberapa kuat niat (Azzam) dan bagaimana kita merencanakannya secara disiplin. Mari wujudkan panggilan Allah ini bersama bimbingan dan sistem yang tepat."
+            </p>
+        </div>
+
+        <!-- 2. BODY / PILAR UTAMA & PROGRAM -->
         <div class="body-section">
-            <h2>3 Pilar Utama Istikmal Syariah</h2>
+            <h2>Mengapa Memilih Istikmal Syariah?</h2>
             
             <div class="card-benefit">
-                <h3>🛡️ 1. Proteksi Syariah (Insurance)</h3>
-                <p style="font-size: 14px; color: #555; margin: 0;">Memberikan santunan perlindungan jiwa bagi keluarga tercinta dengan akad saling tolong-menolong (Ta'awun), memastikan masa depan keluarga tetap aman.</p>
+                <h3>🕋 1. Solusi Terencana Menuju Baitullah</h3>
+                <p style="font-size: 14px; color: #555; margin: 0;">Dari 4 cara ke Baitullah (Tunai, Pembiayaan, Menabung sendiri, atau Menabung Terencana), program ini hadir dengan menyisihkan dana secara disiplin sebesar <strong>Rp500.000 per bulan selama 5 tahun</strong>.</p>
             </div>
 
             <div class="card-benefit">
-                <h3>📈 2. Nilai Tunai Berkah (Investment)</h3>
-                <p style="font-size: 14px; color: #555; margin: 0;">Alokasi dana dikelola secara transparan dan profesional pada instrumen investasi berbasis Syariah yang diawasi penuh oleh Dewan Pengawas Syariah (DPS).</p>
+                <h3>🛡️ 2. Tiga Pilar Utama (3i Reborn)</h3>
+                <p style="font-size: 14px; color: #555; margin: 0;">Memadukan <strong>Investment</strong> (investasi syariah), <strong>Insurance</strong> (perlindungan jiwa syariah di bawah pengawasan OJK & DPS), serta <strong>Income</strong> (peluang bisnis untuk percepatan dana umrah).</p>
             </div>
 
             <div class="card-benefit">
-                <h3>💼 3. Potensi Bisnis (Income)</h3>
-                <p style="font-size: 14px; color: #555; margin: 0;">Bersama sistem 3iReborn, Anda memiliki hak akses untuk menjalankan peluang bisnis keagenan dan menciptakan Passive Income rutin setiap bulannya.</p>
+                <h3>🚀 3. Percepatan Melalui Syiar Bisnis</h3>
+                <p style="font-size: 14px; color: #555; margin: 0;">Hanya dengan modal pendaftaran ringan dan mengajak mitra, Anda bisa menikmati sistem komisi, bonus referensi, bonus elit, hingga jenjang karier untuk melipatgandakan hasil.</p>
             </div>
         </div>
 
         <!-- 3. TESTIMONIAL -->
         <div class="testimonial-section">
-            <h2 style="color: #b45309; margin-top: 0; font-size: 20px; margin-bottom: 20px;">Bukti Nyata Sistem Bekerja!</h2>
+            <h2 style="color: #b45309; margin-top: 0; font-size: 20px; margin-bottom: 20px;">Kisah Sukses & Bukti Nyata</h2>
             
             <div class="testimonial-box">
                 <p class="testimonial-text">"Alhamdulillah, sistem Istikmal Syariah ini sangat mudah diterima masyarakat karena kejelasannya. Walau 1 bulan ini saya lebih banyak gerilya secara offline, alhamdulillah sukses tembus 100 polis dan resmi meraih posisi Leader Entrepreneur. Sekarang waktunya kita percepat secara online!"</p>
                 <div class="testimonial-author">Coach Helmy</div>
-                <div style="font-size: 13px; color: #6b7280;">Binaan Coach Arya & Pak Tiswanto</div>
-                <div class="badge">🏆 Leader Entrepreneur</div>
+                <div style="font-size: 13px; color: #6b7280;">Leader Entrepreneur 3iReborn (Jalur Coach Arya & Pak Tiswanto)</div>
+                <div class="badge">🏆 100 Polis Tembus dalam 1 Bulan</div>
             </div>
         </div>
 
         <!-- 4. FAQ -->
         <div class="faq-section">
-            <h2>Pertanyaan Teratas (FAQ)</h2>
+            <h2>Pertanyaan Populer (FAQ)</h2>
             
             <div class="faq-item">
-                <div class="faq-q"><span>❓</span> <strong>Apakah benar-benar sesuai Syariah?</strong></div>
-                <div class="faq-a">Ya. Sistem ini diawasi langsung oleh Dewan Pengawas Syariah (DPS) dan dikelola berdasarkan prinsip fatwa Dewan Syariah Nasional MUI.</div>
+                <div class="faq-q"><span>❓</span> <strong>Apa saja keutamaan Umrah dalam Islam?</strong></div>
+                <div class="faq-a">Umrah adalah penyempurna rukun Islam yang dapat menghapus dosa, menghilangkan kesulitan, dan doa di Tanah Suci lebih mudah dikabulkan oleh Allah SWT.</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-q"><span>❓</span> <strong>Apakah ini legal dan aman?</strong></div>
-                <div class="faq-a">Sangat aman. Program ini merupakan produk resmi dari perusahaan yang terdaftar dan diawasi ketat oleh Otoritas Jasa Keuangan (OJK).</div>
+                <div class="faq-q"><span>❓</span> <strong>Bagaimana konsep menabung terencananya?</strong></div>
+                <div class="faq-a">Peserta disiplin menyisihkan kontribusi rutin (misal: Rp500.000/bulan) yang dikelola secara transparan dengan akad syariah, investasi halal, serta proteksi jiwa.</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-q"><span>❓</span> <strong>Bagaimana cara menjalankan bisnisnya bersama 3iReborn?</strong></div>
-                <div class="faq-a">Anda akan dibimbing langsung oleh tim leader berpengalaman dengan fasilitas Support System lengkap, baik promosi secara offline maupun online.</div>
+                <div class="faq-q"><span>❓</span> <strong>Bagaimana cara mempercepat keberangkatan Umrah?</strong></div>
+                <div class="faq-a">Selain dari hasil investasi, peserta dapat menjalankan program syiar bisnis 3iReborn untuk mendapatkan penghasilan tambahan bulanan guna melunasi biaya umrah lebih cepat.</div>
             </div>
         </div>
 
         <!-- 5. FOOTER & CTA -->
         <div id="cta" class="footer-cta">
-            <h2 style="margin-top: 0; font-size: 24px; color: #fcd34d;">Amankan Posisi Anda Sekarang!</h2>
-            <p style="font-size: 15px; margin-bottom: 25px;">Bergabunglah bersama komunitas positif 3iReborn dan mulai bangun kesejahteraan yang berkah untuk keluarga Anda.</p>
+            <h2 style="margin-top: 0; font-size: 24px; color: #fcd34d;">Wujudkan Niat Suci Anda Sekarang!</h2>
+            <p style="font-size: 15px; margin-bottom: 25px;">Amankan posisi dan mulailah langkah awal ikhtiar menuju Baitullah bersama bimbingan Coach Helmy.</p>
             
-            <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20Coach%20Helmy,%20saya%20tertarik%20dengan%20program%20Istikmal%20Syariah%203iReborn.%20Mohon%20bimbingannya." class="btn-wa pulse">
-                Konsultasi Gratis via WA
+            <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20Coach%20Helmy,%20saya%20tertarik%20dengan%20program%20Ikhtiar%20Menuju%20Baitullah%20(Istikmal%20Syariah).%20Mohon%20informasinya." class="btn-wa pulse">
+                Konsultasi & Daftar via WhatsApp
             </a>
         </div>
 
         <div class="footer-copyright">
             &copy; 2026 Istikmal Syariah - 3iReborn Network.<br>
-            Konsultan: <strong>Coach Helmy</strong>
+            Konsultan Eksekutif: <strong>Coach Helmy</strong>
         </div>
 
     </div>
