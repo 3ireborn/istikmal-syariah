@@ -3,31 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Istikmal Syariah - Ikhtiar Menuju Baitullah</title>
+    <title>Istikmal Syariah - Ikhtiar Menuju Baitullah 2026</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: auto; padding: 0; background-color: #f4fcf8; }
         .container { background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.05); overflow: hidden; }
         
         /* 1. HEADER */
         .header { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #065f46, #047857); color: white; border-bottom: 5px solid #f59e0b; }
-        .header h1 { font-size: 26px; margin-bottom: 10px; line-height: 1.2; font-weight: 800; color: #fcd34d; }
-        .header p { font-size: 15px; font-weight: 400; opacity: 0.9; margin-bottom: 20px; font-style: italic; }
+        .header h1 { font-size: 26px; margin-bottom: 15px; line-height: 1.2; font-weight: 800; color: #fcd34d; }
+        .header p { font-size: 15px; font-weight: 400; opacity: 0.9; margin-bottom: 20px; }
         
-        /* 2. PROFILE & NARASI */
-        .profile-section { background: #ffffff; padding: 30px 20px; text-align: center; border-bottom: 1px solid #e5e7eb; }
+        /* 2. PROFILE & QUOTE */
+        .profile-section { background: #ffffff; padding: 30px 20px; text-align: center; }
         .profile-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid #059669; box-shadow: 0 8px 16px rgba(0,0,0,0.15); margin-bottom: 15px; }
         .profile-section h2 { color: #065f46; margin: 5px 0; font-size: 22px; }
-        .profile-role { color: #d97706; font-weight: bold; font-size: 14px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
-        
-        /* KOTAK NARASI EMOSIONAL */
-        .narasi-box { background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 5px solid #059669; text-align: left; color: #374151; font-size: 14.5px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .narasi-box h3 { color: #065f46; margin-top: 0; margin-bottom: 10px; font-size: 18px; }
-        .highlight-text { font-weight: bold; color: #b45309; }
+        .profile-role { color: #d97706; font-weight: bold; font-size: 14px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .profile-bio { font-size: 14px; color: #4b5563; text-align: justify; background: #f0fdf4; padding: 15px; border-radius: 10px; border-left: 4px solid #059669; }
 
-        /* 3. FAQ DROPDOWN MENU */
-        .faq-section { padding: 30px 20px; background: #ffffff; }
-        .faq-section h2 { color: #065f46; font-size: 22px; text-align: center; margin-bottom: 25px; }
+        /* 3. NARASI EMOSIONAL (BARU) */
+        .narasi-box { background: #fffbeb; padding: 25px 20px; text-align: left; border-top: 1px solid #fef3c7; border-bottom: 1px solid #fef3c7; }
+        .narasi-title { color: #b45309; text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 15px; font-style: italic; }
+        .narasi-box p { font-size: 14.5px; color: #374151; margin-bottom: 10px; }
+        .narasi-list { margin-top: 5px; margin-bottom: 15px; padding-left: 20px; font-size: 14.5px; color: #374151; font-weight: 600; }
+        .highlight-box { background: #d1fae5; padding: 12px; border-radius: 8px; font-weight: bold; color: #065f46; text-align: center; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+
+        /* 4. BODY (PILAR & CARA MENUJU BAITULLAH) */
+        .body-section { padding: 30px 20px; }
+        .body-section h2 { color: #065f46; font-size: 22px; margin-bottom: 20px; text-align: center; }
+        .card-benefit { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid #10b981; }
+        .card-benefit h3 { color: #047857; margin-top: 0; margin-bottom: 10px; font-size: 17px; }
         
+        /* 5. TESTIMONIAL */
+        .testimonial-section { background: #f9fafb; padding: 30px 20px; text-align: center; border-top: 2px dashed #e5e7eb; border-bottom: 2px dashed #e5e7eb; }
+        .testimonial-box { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; text-align: left; }
+        .testimonial-box::before { content: '❝'; font-size: 40px; color: #10b981; position: absolute; top: -10px; left: 20px; opacity: 0.3; }
+        .testimonial-text { font-style: italic; color: #4b5563; font-size: 14px; margin-bottom: 15px; line-height: 1.6; }
+        .testimonial-author { font-weight: bold; color: #065f46; font-size: 15px; }
+
+        /* 6. FAQ DROPDOWN (BARU) */
+        .faq-section { padding: 30px 20px; background: #ffffff; }
+        .faq-section h2 { color: #065f46; font-size: 22px; text-align: center; margin-bottom: 20px; }
         details { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 12px; transition: all 0.3s ease; }
         details[open] { background: #ffffff; border-color: #059669; box-shadow: 0 4px 10px rgba(5, 150, 105, 0.1); }
         summary { padding: 16px; font-weight: bold; color: #1f2937; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; font-size: 14px; outline: none; }
@@ -36,10 +51,10 @@
         details[open] summary::after { transform: rotate(180deg); }
         .faq-answer { padding: 0 16px 16px 16px; margin: 0; color: #4b5563; font-size: 14px; line-height: 1.6; border-top: 1px dashed #e5e7eb; padding-top: 12px; }
 
-        /* 4. FOOTER & CTA */
+        /* 7. FOOTER & CTA */
         .footer-cta { text-align: center; padding: 40px 20px; background: #065f46; color: white; }
         .btn-wa { display: inline-block; background: #25D366; color: white; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 50px; font-size: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; margin-top: 15px; width: 85%; }
-        .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.4); }
+        .btn-wa:hover { transform: translateY(-3px); }
         .btn-wa.pulse { animation: pulse 2s infinite; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
         
@@ -52,37 +67,78 @@
         
         <!-- HEADER -->
         <div class="header">
-            <h1>Kejarlah Akherat, Insyaallah Dunia Kudapat</h1>
-            <p>"Sebaik-baiknya investasi adalah yang mendekatkan diri pada Ilahi."</p>
+            <div style="background: rgba(255,255,255,0.2); display: inline-block; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 15px; letter-spacing: 1px;">PROGRAM EKSKLUSIF 3IREBORN</div>
+            <h1>Ikhtiar Menuju Baitullah 2026</h1>
+            <p>Wujudkan impian beribadah ke Tanah Suci dengan cara yang lebih terencana, aman, berkah, dan sesuai prinsip Syariah.</p>
+            <a href="#cta" class="btn-wa">KONSULTASI GRATIS VIA WA</a>
         </div>
 
-        <!-- PROFILE & NARASI -->
+        <!-- PROFILE SECTION -->
         <div class="profile-section">
-            <!-- PENTING: Upload foto ke i.postimg.cc, lalu ganti link di bawah ini -->
-            <img src="GANTI_DENGAN_LINK_POSTIMG_DISINI.jpg" alt="Coach Helmy" class="profile-img">
-            <h2>Coach Helmy</h2>
-            <div class="profile-role">Leader Entrepreneur 3iReborn</div>
+            <!-- PENTING: Link gambar nanti menggunakan i.postimg.cc dari masing-masing mitra -->
+            <img src="LINK_GAMBAR_POSTIMG_DISINI.jpg" alt="Profile Leader" class="profile-img" id="profileImg">
+            <h2 id="namaLeader">Coach Helmy</h2>
+            <div class="profile-role" id="roleLeader">Leader Entrepreneur 3iReborn</div>
+            <p class="profile-bio">
+                "Selamat datang di program Istikmal Syariah. Berangkat ke Baitullah bukan sekadar soal memiliki uang tunai saat ini, melainkan tentang seberapa kuat niat (Azzam) dan bagaimana kita merencanakannya secara disiplin. Mari wujudkan panggilan Allah ini bersama bimbingan dan sistem yang tepat."
+            </p>
+        </div>
+
+        <!-- NARASI EMOSIONAL (BARU) -->
+        <div class="narasi-box">
+            <div class="narasi-title">"Kejarlah Akherat, Insyaallah Dunia Kudapat"</div>
+            <p>Apa kendala terbesar yang membuat banyak orang belum bisa berangkat umroh? Apakah karena biaya, perencanaan keuangan, atau faktor lainnya?</p>
+            <ol class="narasi-list">
+                <li>Biaya</li>
+                <li>Baitullah belum jadi prioritas</li>
+                <li>Masih banyak tanggungan</li>
+            </ol>
+            <p>Menariknya, banyak orang sebenarnya mampu mengeluarkan uang untuk banyak kebutuhan lain. Tapi ketika berbicara umroh, sering kali selalu ditunda karena dianggap belum prioritas.</p>
+            <p>Bagaimana cara terbaik agar seseorang bisa tetap menyiapkan dana menuju Baitullah tanpa mengganggu kebutuhan keluarga dan tanggungannya saat ini? 😊</p>
             
-            <div class="narasi-box">
-                <h3>Apa kendala terbesar belum bisa berangkat Umroh?</h3>
-                <p>Apakah karena biaya, perencanaan keuangan, atau faktor lainnya?</p>
-                <ol style="margin-top: 5px; margin-bottom: 15px; padding-left: 20px;">
-                    <li>Biaya</li>
-                    <li>Baitullah belum jadi prioritas</li>
-                    <li>Masih banyak tanggungan</li>
-                </ol>
-                <p>Menariknya, banyak orang sebenarnya mampu mengeluarkan uang untuk kebutuhan lain. Tapi berbicara Umroh, sering kali ditunda karena dianggap belum prioritas.</p>
-                <p class="highlight-text">Bagaimana cara terbaik agar bisa menyiapkan dana ke Baitullah tanpa mengganggu kebutuhan keluarga?</p>
-                <p>Paling simple ya <strong>NABUNG</strong>. Dan skema menabung terencana di <strong>3iReborn Istikmal Syariah</strong> terbukti bisa mempercepat mewujudkan impian berangkat ke Baitullah.</p>
+            <div class="highlight-box">
+                Paling simple ya NABUNG.
+            </div>
+            
+            <p>Dan saya lihat skema nabung di <strong>3iReborn Istikmal Syariah</strong> bisa mempercepat untuk mewujudkan impian berangkat ke Baitullah.</p>
+        </div>
+
+        <!-- BODY / PILAR UTAMA -->
+        <div class="body-section">
+            <h2>Mengapa Memilih Istikmal Syariah?</h2>
+            
+            <div class="card-benefit">
+                <h3>🕋 1. Solusi Terencana Menuju Baitullah</h3>
+                <p style="font-size: 14px; color: #555; margin: 0;">Dari 4 cara ke Baitullah (Tunai, Pembiayaan, Menabung sendiri, atau Menabung Terencana), program ini hadir dengan menyisihkan dana secara disiplin sebesar <strong>Rp500.000 per bulan selama 5 tahun</strong>.</p>
+            </div>
+
+            <div class="card-benefit">
+                <h3>🛡️ 2. Tiga Pilar Utama (3i Reborn)</h3>
+                <p style="font-size: 14px; color: #555; margin: 0;">Memadukan <strong>Investment</strong> (investasi syariah), <strong>Insurance</strong> (perlindungan jiwa syariah di bawah pengawasan OJK & DPS), serta <strong>Income</strong> (peluang bisnis untuk percepatan dana umrah).</p>
+            </div>
+
+            <div class="card-benefit">
+                <h3>🚀 3. Percepatan Melalui Syiar Bisnis</h3>
+                <p style="font-size: 14px; color: #555; margin: 0;">Hanya dengan modal pendaftaran ringan dan mengajak mitra, Anda bisa menikmati sistem komisi, bonus referensi, bonus elit, hingga jenjang karier untuk melipatgandakan hasil.</p>
+            </div>
+        </div>
+
+        <!-- TESTIMONIAL -->
+        <div class="testimonial-section">
+            <h2 style="color: #065f46; margin-top: 0; font-size: 20px; margin-bottom: 20px;">Kisah Sukses & Bukti Nyata</h2>
+            <div class="testimonial-box">
+                <p class="testimonial-text">"Alhamdulillah, sistem Istikmal Syariah ini sangat mudah diterima masyarakat karena kejelasannya. Walau 1 bulan ini saya lebih banyak gerilya secara offline, alhamdulillah sukses tembus 100 polis dan resmi meraih posisi Leader Entrepreneur. Sekarang waktunya kita percepat secara online!"</p>
+                <div class="testimonial-author">Coach Helmy</div>
+                <div style="font-size: 13px; color: #6b7280;">Leader Entrepreneur 3iReborn</div>
             </div>
         </div>
 
         <!-- FAQ DROPDOWN MENU -->
         <div class="faq-section">
-            <h2>Q & A (Tanya Jawab)</h2>
+            <h2>Tanya Jawab Seputar Program (FAQ)</h2>
             
             <details>
-                <summary>1️⃣ Penolakan karena asuransi atau MLM?</summary>
+                <summary>1️⃣ Tentang penolakan karena asuransi atau MLM</summary>
                 <div class="faq-answer">
                     Menurut saya itu hal yang wajar Mas. Tidak semua orang cocok dengan produk asuransi maupun bisnis jaringan. Bahkan agen umroh pun tidak semua orang langsung daftar umroh.<br><br>
                     Karena itu saya tidak fokus mengajak semua orang, tetapi mencari orang yang memang memiliki kebutuhan proteksi, perencanaan keuangan, atau ingin memiliki penghasilan tambahan.
@@ -90,7 +146,7 @@
             </details>
 
             <details>
-                <summary>2️⃣ Bagaimana jika beberapa bulan belum dapat 1 orang?</summary>
+                <summary>2️⃣ Bagaimana jika beberapa bulan belum mendapatkan 1 orang?</summary>
                 <div class="faq-answer">
                     Menurut saya itu juga hal yang normal dalam bisnis apa pun. Tidak semua orang langsung berhasil di bulan pertama.<br><br>
                     Saya sendiri lebih fokus membangun jaringan pertemanan, silaturahmi, belajar komunikasi, dan konsisten menjalankan aktivitas. Karena dalam bisnis jaringan yang dibangun bukan hanya hasil hari ini, tetapi aset jaringan untuk jangka panjang.
@@ -100,41 +156,44 @@
             <details>
                 <summary>3️⃣ Jika 3 orang tercapai tidak bersamaan, Elite tetap didapat?</summary>
                 <div class="faq-answer">
-                    Sesuai marketing plan, untuk mendapatkan Bonus Elite harus sponsor pribadi 3 orang <strong>dalam periode yang sedang berjalan</strong>.<br><br>
-                    Jika periode berikutnya ingin dapat Bonus Elite lagi, maka perlu sponsor 3 orang lagi. Apabila periode berikutnya belum dapat 3 sponsor baru, Bonus Elite tidak diperoleh pada periode tersebut. Namun, <strong>bonus sponsor tetap berjalan</strong> selama mitra yang disponsori aktif membayar premi.
+                    Sesuai marketing plan yang saya pahami, untuk mendapatkan Bonus Elite harus sponsor pribadi 3 orang <strong>dalam periode yang sedang berjalan</strong>.<br><br>
+                    Jika pada periode berikutnya ingin mendapatkan Bonus Elite lagi, maka perlu sponsor 3 orang lagi sesuai syarat yang berlaku. Apabila periode berikutnya belum mendapatkan 3 sponsor baru, Bonus Elite tidak diperoleh pada periode tersebut.<br><br>
+                    Namun bonus sponsor tetap berjalan selama mitra yang disponsori masih aktif membayar premi sesuai ketentuan perusahaan.
                 </div>
             </details>
 
             <details>
-                <summary>4️⃣ Beda kota, bagaimana support leader?</summary>
+                <summary>4️⃣ Kita berada di kota yang berbeda, bagaimana support leader?</summary>
                 <div class="faq-answer">
-                    Jarak bukan kendala utama lagi Mas. Saya pernah memiliki mitra di Hongkong. Awalnya komunikasi hanya via WA dan online. Setelah berkembang, saya diundang langsung ke sana untuk bersilaturahmi.<br><br>
-                    Selain itu, saya juga membuat <strong>Landing Page (LP) Istikmal Syariah</strong> dan support pribadi melalui WhatsApp/Zoom untuk membantu calon mitra & nasabah mendapat informasi yang dibutuhkan.
+                    Menurut pengalaman saya, jarak bukan kendala utama lagi Mas. Saya pernah memiliki mitra di Hongkong. Awalnya komunikasi hanya melalui grup WhatsApp dan online. Namun setelah jaringan mereka berkembang, saya bahkan diundang langsung ke Hongkong untuk bertemu dan bersilaturahmi.<br><br>
+                    Selain itu saya juga membuat Landing Page (LP) Istikmal Syariah dan support pribadi melalui WhatsApp untuk membantu calon mitra maupun calon nasabah mendapatkan informasi yang dibutuhkan.
                 </div>
             </details>
 
             <details>
-                <summary>5️⃣ Berhenti di bulan ke 3-4, apakah dana bisa diambil?</summary>
+                <summary>5️⃣ Baru berjalan 3–4 bulan lalu berhenti, apakah dana bisa diambil?</summary>
                 <div class="faq-answer">
-                    Untuk pertanyaan ini saya tidak berani menyebut angka pasti, karena setiap peserta bisa berbeda tergantung usia masuk, kontribusi, dan nilai investasi yang terbentuk.<br><br>
-                    Yang perlu dipahami, pada tahun 1 & 2 terdapat biaya pengelolaan, sehingga nilai yang terbentuk di awal belum sama dengan total kontribusi yang disetorkan. Saya sangat menyarankan untuk melihat <strong>Ilustrasi Resmi</strong> agar proyeksi nilai investasi terlihat lebih akurat.
+                    Untuk pertanyaan ini saya tidak berani menyebut angka pasti karena setiap peserta bisa berbeda tergantung usia masuk, kontribusi yang dibayarkan, dan nilai investasi yang terbentuk.<br><br>
+                    Yang perlu dipahami, pada tahun pertama dan tahun kedua terdapat biaya pengelolaan sesuai ilustrasi produk, sehingga nilai yang terbentuk pada awal masa kepesertaan belum sama dengan total kontribusi yang sudah dibayarkan.<br><br>
+                    Karena itu saya lebih menyarankan melihat ilustrasi resmi sesuai usia dan kontribusi peserta agar dapat diketahui proyeksi nilai investasi yang terbentuk dari tahun ke tahun secara lebih akurat.
                 </div>
             </details>
         </div>
 
         <!-- FOOTER & CTA -->
-        <div class="footer-cta">
+        <div id="cta" class="footer-cta">
             <h2 style="margin-top: 0; font-size: 22px; color: #fcd34d;">Mari Diskusi Lebih Lanjut</h2>
-            <p style="font-size: 14px; margin-bottom: 20px;">Untuk menghindari salah pemahaman, mari kita ngobrol lebih detail dan bedah ilustrasinya melalui Zoom atau WhatsApp.</p>
+            <p style="font-size: 14px; margin-bottom: 25px;">Untuk lebih jelasnya melalui Zoom atau WhatsApp agar lebih jelas dan tidak terjadi salah pemahaman. Wujudkan Niat Suci Anda Sekarang!</p>
             
-            <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20Coach%20Helmy,%20saya%20sudah%20baca%20informasi%20Istikmal%20Syariah.%20Bisa%20kita%20jadwalkan%20Zoom/Diskusi%20lebih%20lanjut?" class="btn-wa pulse">
-                DISKUSI VIA WHATSAPP
+            <a href="https://wa.me/6285218453131
+                ?text=Halo%20Coach/Leader,%20saya%20tertarik%20dengan%20program%20Ikhtiar%20Menuju%20Baitullah%20(Istikmal%20Syariah).%20Bisa%20kita%20jadwalkan%20Zoom/Diskusi%20lebih%20lanjut?" class="btn-wa pulse" id="linkWa">
+                Konsultasi via WhatsApp
             </a>
         </div>
 
         <div class="footer-copyright">
-            &copy; 2026 Istikmal Syariah - 3iReborn Network.<br>
-            Konsultan Eksekutif: <strong>Coach Helmy</strong>
+            &copy; 2026 copyright NPA Smart System<br>
+            3iReborn Network
         </div>
 
     </div>
