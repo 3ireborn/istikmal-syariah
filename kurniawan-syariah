@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Istikmal Syariah bersama Kurniawan </title>
+    <!-- CSS Omitted for brevity in this preview, paste full CSS here -->
+</head>
+<body>
+    <div class="profile-section">
+        <img src="https://i.postimg.cc/KvtsVtR7/umroh.png" alt="Kurniawan ">
+        <h2>Kurniawan </h2>
+        <div class="profile-role">Leader Entrepreneur 3iReborn</div>
+    </div>
+    
+    <div id="cta">
+        <a href="https://wa.me/6282240001731?text=Halo%20Kurniawan ,%20saya%20mau%20konsultasi%20program%20Ikhtiar%20Baitullah." class="btn-wa pulse">
+            Hubungi Saya di WhatsApp
+        </a>
+    </div>
+    <div class="footer-copyright">Konsultan Eksekutif: <strong>Kurniawan </strong></div>
+</body>
+</html>
